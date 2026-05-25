@@ -2034,3 +2034,23 @@ textarea.form-input ~ .form-label {
         background-color: var(--accent-secondary);
     }
 }
+
+/* ==========================================================================
+   24. PROJECT IMAGE THUMBNAIL HOVER EFFECT
+   ========================================================================== */
+.project-thumb-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.82;
+    transition: opacity var(--transition-normal), transform var(--transition-normal);
+    z-index: 1;
+}
+
+.project-card:hover .project-thumb-img {
+    opacity: 0.95;
+    transform: scale(1.04);
+}
