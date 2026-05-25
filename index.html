@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Developer Portfolio</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="A premium, highly interactive portfolio showcasing creative development work, skills, and clients testimonials.">
+    <meta name="keywords" content="Creative Developer, Portfolio, Frontend Engineer, Glassmorphism, Bento Grid">
+    <meta name="author" content="Portfolio Creator">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+    <!-- Ambient Glowing Blobs -->
+    <div class="ambient-glows">
+        <div class="glow-blob blob-1"></div>
+        <div class="glow-blob blob-2"></div>
+        <div class="glow-blob blob-3"></div>
+    </div>
+
+    <!-- Floating Grid Mesh -->
+    <div class="grid-mesh"></div>
+
+    <!-- Particles Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ==========================================================================
+       1. HEADER & NAVIGATION BAR
+       ========================================================================== -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="logo-anchor">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span>DEV.<span>PORTFOLIO</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#testimonials" class="nav-link">Clients</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <!-- Light / Dark Mode Toggle Button -->
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark/light theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Hamburger -->
+                <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12" id="line1"></line>
+                        <line x1="3" y1="6" x2="21" y2="6" id="line2"></line>
+                        <line x1="3" y1="18" x2="21" y2="18" id="line3"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       2. HERO SECTION
+       ========================================================================== -->
+    <section class="section" id="hero" style="padding: 0;">
+        <div class="container hero-content">
+            <div class="hero-subtitle reveal-element active">
+                <span class="hero-pulse-dot"></span> Available for new opportunities
+            </div>
+            <h1 class="hero-title reveal-element active" style="transition-delay: 0.1s;">
+                Crafting Digital <br><span class="hero-gradient-text">Experiences</span> That Wow
+            </h1>
+            <p class="hero-description reveal-element active" style="transition-delay: 0.2s;">
+                I'm a creative frontend developer specializing in designing and building exceptionally high-fidelity, interactive, and responsive websites.
+            </p>
+            <div class="hero-buttons reveal-element active" style="transition-delay: 0.3s;">
+                <a href="#projects" class="btn btn-primary magnetic-btn" id="btn-hero-projects">
+                    View Projects
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary magnetic-btn" id="btn-hero-contact">Let's Talk</a>
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="mouse-scroller">
+                    <span class="mouse-wheel"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       3. BENTO GRID (ABOUT & SKILLS)
+       ========================================================================== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title-wrap reveal-element">
+                <span class="section-subtitle">Discover Me</span>
+                <h2 class="section-title">About & Expertise</h2>
+            </div>
+            
+            <div class="bento-grid reveal-element" style="transition-delay: 0.15s;">
+                <!-- Bio Card -->
+                <div class="bento-item bento-bio glass-card">
+                    <div>
+                        <div class="bento-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                            Who I Am
+                        </div>
+                        <p class="bento-bio-text">
+                            Hello! I am a passionate developer dedicated to building fluid, visually gorgeous web systems. I combine aesthetic design values with clean, robust code to create digital interfaces that are a joy to interact with.
+                        </p>
+                    </div>
+                    <div class="bento-signature">Creative Developer</div>
+                </div>
+
+                <!-- Skills Card -->
+                <div class="bento-item bento-skills glass-card">
+                    <div>
+                        <div class="bento-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+                            Tech Toolbox
+                        </div>
+                        <p style="font-size: 0.85rem; margin-bottom: 12px;">Hover over tags to see what I build with daily:</p>
+                        <div class="skills-container">
+                            <div class="skill-badge" data-skill="HTML5" title="Structuring responsive web pages.">HTML5</div>
+                            <div class="skill-badge" data-skill="CSS3" title="Crafting layouts, grids, and premium animations.">CSS3</div>
+                            <div class="skill-badge" data-skill="JavaScript" title="Adding interactions, canvas structures, and logic.">JavaScript</div>
+                            <div class="skill-badge" data-skill="React / Next.js" title="Structuring modular reactive component architectures.">React / Next.js</div>
+                            <div class="skill-badge" data-skill="Git & GitHub" title="Managing codebase histories and distribution layers.">Git & GitHub</div>
+                            <div class="skill-badge" data-skill="Figma" title="Designing visuals, vectors, layouts, and mockups.">Figma</div>
+                            <div class="skill-badge" data-skill="Node.js" title="Serving database payloads and custom API channels.">Node.js</div>
+                            <div class="skill-badge" data-skill="Web Performance" title="Enforcing fast, accessibility-friendly, SEO optimization.">SEO & Performance</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Card -->
+                <div class="bento-item bento-status glass-card">
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                    </div>
+                    <div class="status-text">Open for Work</div>
+                    <div class="status-sub">Remote / Hybrid / Freelance</div>
+                </div>
+
+                <!-- Local Time Card -->
+                <div class="bento-item bento-clock glass-card">
+                    <div class="clock-time" id="local-clock">00:00:00</div>
+                    <div class="clock-label">My Local Time (IST)</div>
+                </div>
+
+                <!-- Stats Card -->
+                <div class="bento-item bento-stats glass-card">
+                    <div class="stat-box">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-box" style="border-left: 1px solid var(--border-color); padding-left: 32px;">
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       4. PROJECTS SHOWCASE
+       ========================================================================== -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title-wrap reveal-element">
+                <span class="section-subtitle">Portfolio Showcase</span>
+                <h2 class="section-title">Featured Creations</h2>
+            </div>
+
+            <!-- Animated Projects Filter Controls -->
+            <div class="projects-filter-bar reveal-element">
+                <div class="filter-pills" id="filter-container">
+                    <span class="filter-bg" id="filter-bg"></span>
+                    <button class="filter-btn active" data-filter="all" id="btn-filter-all">All Projects</button>
+                    <button class="filter-btn" data-filter="frontend" id="btn-filter-frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="fullstack" id="btn-filter-fullstack">Fullstack</button>
+                </div>
+            </div>
+
+            <!-- Projects Layout Grid -->
+            <div class="projects-grid reveal-element" id="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card glass-card" data-category="frontend" data-project-id="1">
+                    <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">
+                        <div class="project-overlay-glow"></div>
+                    </div>
+                    <div class="project-card-info">
+                        <div>
+                            <div class="project-meta-wrap">
+                                <span class="project-tag">Frontend & Design</span>
+                            </div>
+                            <h3 class="project-card-title">Aetheria eCommerce</h3>
+                            <p class="project-card-desc">An immersive 3D eCommerce interface with fluid product animations, responsive grid views, and dynamic item filters.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-badges">
+                                <span class="project-tech-badge">HTML5</span>
+                                <span class="project-tech-badge">CSS Grid</span>
+                                <span class="project-tech-badge">JS Animations</span>
+                            </div>
+                            <div class="project-arrow-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card glass-card" data-category="fullstack" data-project-id="2">
+                    <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">
+                        <div class="project-overlay-glow"></div>
+                    </div>
+                    <div class="project-card-info">
+                        <div>
+                            <div class="project-meta-wrap">
+                                <span class="project-tag">Fullstack Web App</span>
+                            </div>
+                            <h3 class="project-card-title">Nova Dashboard</h3>
+                            <p class="project-card-desc">A professional analytics dashboard featuring charts, responsive layouts, data models, and a sleek modern dark mode default layout.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-badges">
+                                <span class="project-tech-badge">React</span>
+                                <span class="project-tech-badge">Node.js</span>
+                                <span class="project-tech-badge">MongoDB</span>
+                            </div>
+                            <div class="project-arrow-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card glass-card" data-category="frontend" data-project-id="3">
+                    <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);">
+                        <div class="project-overlay-glow"></div>
+                    </div>
+                    <div class="project-card-info">
+                        <div>
+                            <div class="project-meta-wrap">
+                                <span class="project-tag">Interactive Design</span>
+                            </div>
+                            <h3 class="project-card-title">Orbit Chat Hub</h3>
+                            <p class="project-card-desc">A highly aesthetic chat app mockup with floating widgets, responsive messaging frames, and smooth active custom states.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-badges">
+                                <span class="project-tech-badge">HTML5</span>
+                                <span class="project-tech-badge">Vanilla CSS</span>
+                                <span class="project-tech-badge">WebSockets</span>
+                            </div>
+                            <div class="project-arrow-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       5. CLIENT EXPERIENCES (TESTIMONIALS SLIDER)
+       ========================================================================== -->
+    <section class="section" id="testimonials" style="background: rgba(255, 255, 255, 0.01);">
+        <div class="container">
+            <div class="section-title-wrap reveal-element">
+                <span class="section-subtitle">Client Experiences</span>
+                <h2 class="section-title">What People Say</h2>
+            </div>
+
+            <!-- Draggable Testimonials Carousel Frame -->
+            <div class="testimonials-slider-container reveal-element" id="slider-container" style="transition-delay: 0.1s;">
+                <div class="testimonials-track" id="slider-track">
+                    <!-- Testimonial A -->
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-content">
+                            Working with this developer was a game-changer! They took our legacy layout and completely transformed it into an interactive masterpiece. Our users are wowed!
+                        </p>
+                        <div class="testimonial-user">
+                            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);">JH</div>
+                            <div class="testimonial-info">
+                                <h4>Jason H.</h4>
+                                <p>Founder, Aether Tech Labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial B -->
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-content">
+                            Outstanding attention to detail and a fantastic sense of modern interactive visuals. They delivered the frontend layout with zero bugs and absolute precision. Highly recommended!
+                        </p>
+                        <div class="testimonial-user">
+                            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);">SC</div>
+                            <div class="testimonial-info">
+                                <h4>Sarah C.</h4>
+                                <p>Product Director, Nova Design Studio</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial C -->
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-content">
+                            Not only did they code a highly responsive layout, but the custom particles and micro-animations made our presentation pop. An absolute professional!
+                        </p>
+                        <div class="testimonial-user">
+                            <div class="testimonial-avatar" style="background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);">AM</div>
+                            <div class="testimonial-info">
+                                <h4>Alex M.</h4>
+                                <p>Creative Director, Orbit Socials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide Dots Indicators -->
+                <div class="testimonials-dots" id="slider-dots">
+                    <span class="dot-indicator active" data-index="0"></span>
+                    <span class="dot-indicator" data-index="1"></span>
+                    <span class="dot-indicator" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       6. SOCIAL HUB GRID
+       ========================================================================== -->
+    <section class="section" id="social-hub">
+        <div class="container">
+            <div class="section-title-wrap reveal-element">
+                <span class="section-subtitle">Connections</span>
+                <h2 class="section-title">My Creative Hub</h2>
+            </div>
+
+            <div class="socials-grid reveal-element" style="transition-delay: 0.15s;">
+                <!-- GitHub Card -->
+                <a href="https://github.com" target="_blank" class="social-card glass-card social-github" id="social-github-card">
+                    <div class="social-card-bg-fill"></div>
+                    <div class="social-icon-box">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </div>
+                    <div class="social-details-wrap">
+                        <div>
+                            <div class="social-name">GitHub</div>
+                            <div class="social-subtext">View my public code repos</div>
+                        </div>
+                        <div class="social-link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- LinkedIn Card -->
+                <a href="https://linkedin.com" target="_blank" class="social-card glass-card social-linkedin" id="social-linkedin-card">
+                    <div class="social-card-bg-fill"></div>
+                    <div class="social-icon-box">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </div>
+                    <div class="social-details-wrap">
+                        <div>
+                            <div class="social-name">LinkedIn</div>
+                            <div class="social-subtext">Connect with me professionally</div>
+                        </div>
+                        <div class="social-link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Twitter / X Card -->
+                <a href="https://twitter.com" target="_blank" class="social-card glass-card social-twitter" id="social-twitter-card">
+                    <div class="social-card-bg-fill"></div>
+                    <div class="social-icon-box">
+                        <!-- Custom X Logo vector representation -->
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                        </svg>
+                    </div>
+                    <div class="social-details-wrap">
+                        <div>
+                            <div class="social-name">Twitter / X</div>
+                            <div class="social-subtext">Read my thoughts & tech threads</div>
+                        </div>
+                        <div class="social-link-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       7. CONTACT ME
+       ========================================================================== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title-wrap reveal-element">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Let's Create Together</h2>
+            </div>
+
+            <div class="contact-layout reveal-element" style="transition-delay: 0.1s;">
+                <!-- Left: Click to copy card -->
+                <div class="copy-card glass-card">
+                    <div>
+                        <h3 class="copy-widget-title">Quick Connect</h3>
+                        <p style="font-size: 0.85rem; margin-bottom: 24px;">Click the card below to copy my primary email address instantly to your clipboard:</p>
+                        
+                        <!-- Clipboard interactive container -->
+                        <div class="copy-email-container" id="copy-email-widget" data-email="hello@portfolio.com">
+                            <div class="copy-toast" id="copy-toast">Copied! 👍</div>
+                            <div class="email-address-text">hello@portfolio.com</div>
+                            <div class="copy-icon-wrap">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 0.8rem; color: var(--text-tertiary);">
+                        Typical response window: Under 24 hours.
+                    </div>
+                </div>
+
+                <!-- Right: Fully-styled form -->
+                <form class="contact-form glass-card" id="contact-form" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="form-name" placeholder=" " required autocomplete="name">
+                        <label for="form-name" class="form-label">Full Name</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="form-email" placeholder=" " required autocomplete="email">
+                        <label for="form-email" class="form-label">Email Address</label>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-input" id="form-message" placeholder=" " required></textarea>
+                        <label for="form-message" class="form-label">Tell me about your project...</label>
+                    </div>
+
+                    <div class="submit-btn-wrap">
+                        <button type="submit" class="btn btn-primary submit-btn" id="form-submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <div class="spinner"></div>
+                            <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 40px 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 0.85rem; color: var(--text-tertiary);">
+        <div class="container">
+            <p>&copy; 2026 Creative Portfolio. Designed and Handcrafted with Passion.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       8. DYNAMIC MODAL BOX
+       ========================================================================== -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content-wrap">
+            <button class="modal-close-btn" id="modal-close" aria-label="Close project modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-hero" id="modal-hero-bg">
+                <div class="modal-hero-text">
+                    <span class="project-tag" id="modal-tag" style="background: rgba(0,0,0,0.4); padding: 4px 10px; border-radius: var(--radius-sm); backdrop-filter: blur(4px);">Frontend</span>
+                    <h2 class="hero-title" id="modal-title" style="font-size: 2.2rem; margin-top: 10px; margin-bottom: 0;">Project Title</h2>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-details">
+                    <h3>Project Synopsis</h3>
+                    <p id="modal-long-desc">Detailed project description goes here...</p>
+                    
+                    <h3>Technical Implementation</h3>
+                    <p>We built this system targeting high frame-rate rendering and minimal DOM paint latency. By separating data models from views, the interface renders seamlessly on mobile platforms.</p>
+                    <div class="modal-tech-list" id="modal-tech-badges">
+                        <!-- Badges added dynamically -->
+                    </div>
+                </div>
+                <div class="modal-sidebar">
+                    <div class="modal-info-item">
+                        <div class="modal-info-label">Category</div>
+                        <div class="modal-info-value" id="modal-sidebar-category">Web Development</div>
+                    </div>
+                    <div class="modal-info-item">
+                        <div class="modal-info-label">Timeline</div>
+                        <div class="modal-info-value" id="modal-sidebar-timeline">4 Weeks</div>
+                    </div>
+                    <div class="modal-links">
+                        <a href="https://github.com" target="_blank" class="btn btn-primary magnetic-btn" style="width: 100%;" id="modal-github-link">
+                            View GitHub
+                        </a>
+                        <a href="#" target="_blank" class="btn btn-secondary magnetic-btn" style="width: 100%;" id="modal-live-link">
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
