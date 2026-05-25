@@ -1349,86 +1349,6 @@ textarea.form-input ~ .form-label {
 }
 
 /* ==========================================================================
-   16. FLOATING EMOJI SOCIAL SIDEBAR
-   ========================================================================== */
-.floating-sidebar {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 999;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 10px;
-    border-radius: var(--radius-full);
-    box-shadow: var(--card-shadow);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    transition: border-color var(--transition-normal), background-color var(--transition-normal);
-}
-
-.sidebar-item {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
-    transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
-}
-
-.sidebar-item:hover {
-    transform: scale(1.18) rotate(6deg);
-    border-color: var(--accent-primary);
-    background: rgba(var(--accent-primary-rgb), 0.1);
-}
-
-.emoji-icon {
-    font-size: 1.35rem;
-    line-height: 1;
-    transition: transform var(--transition-fast);
-}
-
-.sidebar-label {
-    position: absolute;
-    right: 60px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 6px 14px;
-    border-radius: var(--radius-full);
-    font-size: 0.78rem;
-    font-weight: 600;
-    font-family: var(--font-heading);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(12px);
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
-    box-shadow: var(--card-shadow);
-    white-space: nowrap;
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-}
-
-.sidebar-item:hover .sidebar-label {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-@media (max-width: 768px) {
-    .floating-sidebar {
-        display: none !important;
-    }
-}
-
-/* ==========================================================================
    17. 3D FLOATING SOCIAL CARDS
    ========================================================================== */
 .floating-3d-container {
@@ -1493,7 +1413,7 @@ textarea.form-input ~ .form-label {
     animation-delay: -3.2s;
 }
 
-.floater-3d-card .floater-emoji {
+.floater-3d-card .floater-icon {
     font-size: 1.8rem;
     transition: transform var(--transition-normal);
     filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
@@ -1509,7 +1429,7 @@ textarea.form-input ~ .form-label {
     opacity: 0.4;
 }
 
-.floater-3d-card:hover .floater-emoji {
+.floater-3d-card:hover .floater-icon {
     transform: translateZ(15px) scale(1.15);
 }
 
@@ -1557,7 +1477,7 @@ textarea.form-input ~ .form-label {
     100% { transform: perspective(1000px) rotateX(25deg) rotateY(15deg) translateY(-14px); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .floating-3d-container {
         display: none !important;
     }
