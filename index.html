@@ -7,7 +7,7 @@
     <script>
         // Immediately set theme to prevent dark-light flashing on load
         (function() {
-            const cachedTheme = localStorage.getItem('theme') || 'dark';
+            const cachedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', cachedTheme);
         })();
     </script>
@@ -22,6 +22,22 @@
     <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
+
+    <!-- Floating Emoji Social Sidebar -->
+    <div class="floating-sidebar" id="social-sidebar">
+        <a href="https://github.com/Kritika-Panwar-151" target="_blank" class="sidebar-item">
+            <span class="emoji-icon">🐙</span>
+            <span class="sidebar-label">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/kritika-panwar-601721312/" target="_blank" class="sidebar-item">
+            <span class="emoji-icon">💼</span>
+            <span class="sidebar-label">LinkedIn</span>
+        </a>
+        <a href="#contact" class="sidebar-item">
+            <span class="emoji-icon">✉️</span>
+            <span class="sidebar-label">Contact Me</span>
+        </a>
+    </div>
 
     <!-- Ambient Glowing Blobs -->
     <div class="ambient-glows">
@@ -140,11 +156,11 @@
                                 Who I Am
                             </div>
                             <p class="bento-bio-teaser" id="bio-teaser" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px; transition: opacity var(--transition-fast), transform var(--transition-fast);">
-                                Want to learn more about the developer behind the code?
+                                Want to learn more about my coding journey?
                             </p>
                             <div class="bento-bio-expandable" id="bio-expandable" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height var(--transition-normal), opacity var(--transition-normal);">
                                 <p class="bento-bio-text" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-                                    Hello! I am a passionate developer dedicated to building fluid, visually gorgeous web systems. I combine aesthetic design values with clean, robust code to create digital interfaces that are a joy to interact with.
+                                    Hello! I'm Kritika Panwar, a student software engineer focusing on building highly visual, clean, and impactful applications. From community-driven platforms to automated trackers, I combine user-friendly designs with clean codebase architectures to solve real-world problems.
                                 </p>
                             </div>
                         </div>
@@ -152,7 +168,7 @@
                             <button class="btn btn-secondary magnetic-btn" id="reveal-bio-btn" style="padding: 8px 18px; font-size: 0.8rem; height: auto;">
                                 <span>Discover My Story</span>
                             </button>
-                            <div class="bento-signature" id="bio-signature" style="opacity: 0.3; font-size: 1.1rem; transition: opacity var(--transition-normal);">Creative Developer</div>
+                            <div class="bento-signature" id="bio-signature" style="opacity: 0.3; font-size: 1.1rem; transition: opacity var(--transition-normal);">Kritika Panwar</div>
                         </div>
                     </div>
                 </div>
@@ -230,7 +246,7 @@
 
             <!-- Projects Layout Grid -->
             <div class="projects-grid reveal-element" id="projects-grid">
-                <!-- Project Card 1 -->
+                <!-- Project Card 1: ShareBite -->
                 <div class="project-card glass-card" data-category="frontend" data-project-id="1">
                     <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">
                         <div class="project-overlay-glow"></div>
@@ -240,14 +256,14 @@
                             <div class="project-meta-wrap">
                                 <span class="project-tag">Frontend & Design</span>
                             </div>
-                            <h3 class="project-card-title">Aetheria eCommerce</h3>
-                            <p class="project-card-desc">An immersive 3D eCommerce interface with fluid product animations, responsive grid views, and dynamic item filters.</p>
+                            <h3 class="project-card-title">ShareBite Portal</h3>
+                            <p class="project-card-desc">A food redistribution platform reducing food waste by connecting commercial donors directly to local shelters.</p>
                         </div>
                         <div class="project-card-footer">
                             <div class="project-tech-badges">
-                                <span class="project-tech-badge">HTML5</span>
-                                <span class="project-tech-badge">CSS Grid</span>
-                                <span class="project-tech-badge">JS Animations</span>
+                                <span class="project-tech-badge">React.js</span>
+                                <span class="project-tech-badge">Tailwind CSS</span>
+                                <span class="project-tech-badge">Firebase</span>
                             </div>
                             <div class="project-arrow-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -256,7 +272,7 @@
                     </div>
                 </div>
 
-                <!-- Project Card 2 -->
+                <!-- Project Card 2: Attendance Tracker -->
                 <div class="project-card glass-card" data-category="fullstack" data-project-id="2">
                     <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">
                         <div class="project-overlay-glow"></div>
@@ -266,14 +282,14 @@
                             <div class="project-meta-wrap">
                                 <span class="project-tag">Fullstack Web App</span>
                             </div>
-                            <h3 class="project-card-title">Nova Dashboard</h3>
-                            <p class="project-card-desc">A professional analytics dashboard featuring charts, responsive layouts, data models, and a sleek modern dark mode default layout.</p>
+                            <h3 class="project-card-title">Attendance Tracker</h3>
+                            <p class="project-card-desc">An automated scanning portal built to register logs, support role audits, and plot analytics into a dashboard.</p>
                         </div>
                         <div class="project-card-footer">
                             <div class="project-tech-badges">
-                                <span class="project-tech-badge">React</span>
                                 <span class="project-tech-badge">Node.js</span>
                                 <span class="project-tech-badge">MongoDB</span>
+                                <span class="project-tech-badge">Chart.js</span>
                             </div>
                             <div class="project-arrow-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -282,24 +298,50 @@
                     </div>
                 </div>
 
-                <!-- Project Card 3 -->
-                <div class="project-card glass-card" data-category="frontend" data-project-id="3">
+                <!-- Project Card 3: HostelGo -->
+                <div class="project-card glass-card" data-category="fullstack" data-project-id="3">
                     <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);">
                         <div class="project-overlay-glow"></div>
                     </div>
                     <div class="project-card-info">
                         <div>
                             <div class="project-meta-wrap">
-                                <span class="project-tag">Interactive Design</span>
+                                <span class="project-tag">Fullstack Web App</span>
                             </div>
-                            <h3 class="project-card-title">Orbit Chat Hub</h3>
-                            <p class="project-card-desc">A highly aesthetic chat app mockup with floating widgets, responsive messaging frames, and smooth active custom states.</p>
+                            <h3 class="project-card-title">HostelGo Platform</h3>
+                            <p class="project-card-desc">A comprehensive reservation web system for room allocations, check-ins, mess logs, and maintenance requests.</p>
+                        </div>
+                        <div class="project-card-footer">
+                            <div class="project-tech-badges">
+                                <span class="project-tech-badge">React.js</span>
+                                <span class="project-tech-badge">Express</span>
+                                <span class="project-tech-badge">MySQL</span>
+                            </div>
+                            <div class="project-arrow-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Slow Learners -->
+                <div class="project-card glass-card" data-category="frontend" data-project-id="4">
+                    <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);">
+                        <div class="project-overlay-glow"></div>
+                    </div>
+                    <div class="project-card-info">
+                        <div>
+                            <div class="project-meta-wrap">
+                                <span class="project-tag">Frontend & Design</span>
+                            </div>
+                            <h3 class="project-card-title">Slow Learners Portal</h3>
+                            <p class="project-card-desc">An adaptive educational auxiliary portal assessing student curves, suggesting custom visual content, and plotting progress.</p>
                         </div>
                         <div class="project-card-footer">
                             <div class="project-tech-badges">
                                 <span class="project-tech-badge">HTML5</span>
-                                <span class="project-tech-badge">Vanilla CSS</span>
-                                <span class="project-tech-badge">WebSockets</span>
+                                <span class="project-tech-badge">JavaScript</span>
+                                <span class="project-tech-badge">Google Charts</span>
                             </div>
                             <div class="project-arrow-icon">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -344,9 +386,9 @@
                     <div class="lab-playlist-card glass-card active" data-video="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-computer-34346-large.mp4" style="padding: 20px; cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);">
                         <h4 style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-primary)" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                            Aetheria eCommerce Demo
+                            ShareBite Walkthrough
                         </h4>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary);">3D product transitions, category sorting filters, and cart logic execution demo.</p>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary);">Interactive demonstration of food waste metrics, listings creation, and donation pickups.</p>
                     </div>
 
                     <div class="lab-playlist-card glass-card" data-video="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-developer-typing-on-a-keyboard-40546-large.mp4" style="padding: 20px; cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);">

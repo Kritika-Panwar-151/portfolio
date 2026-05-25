@@ -28,8 +28,8 @@ function initThemeSwitcher() {
     const toggleBtn = document.getElementById('theme-toggle');
     if (!toggleBtn) return;
 
-    // Check cached preference, default to dark
-    const cachedTheme = localStorage.getItem('theme') || 'dark';
+    // Check cached preference, default to light
+    const cachedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', cachedTheme);
 
     toggleBtn.addEventListener('click', () => {
@@ -374,34 +374,44 @@ function initProjectFilters() {
    ========================================================================== */
 const projectData = {
     "1": {
-        title: "Aetheria eCommerce",
+        title: "ShareBite Portal",
         category: "Frontend & Design",
-        longDesc: "Aetheria is an immersive, virtual shopping layout offering seamless smooth scrolling, 3D CSS item rotation, and rapid card filtering. We designed it using custom grid mechanics and loaded items dynamically using standard REST resources.",
-        techStack: ["HTML5", "CSS Grid", "JS Animations", "Figma", "REST API"],
+        longDesc: "ShareBite is a community-focused web platform built to mitigate food waste and insecurity. It bridges the gap between commercial food donors (like restaurants and grocers) and regional shelters, enabling automated alerts and pickup schedules in a responsive framework.",
+        techStack: ["React.js", "Tailwind CSS", "JavaScript (ES6)", "Leaflet Maps", "Firebase"],
         timeline: "4 Weeks",
-        github: "https://github.com",
-        live: "#",
+        github: "https://github.com/Kritika-Panwar-151",
+        live: "https://github.com/Kritika-Panwar-151",
         color: "linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%)"
     },
     "2": {
-        title: "Nova Dashboard",
+        title: "Attendance Tracker",
         category: "Fullstack Web App",
-        longDesc: "Nova is a highly elegant dashboard platform serving structured statistical graphics. It includes dark mode optimization, user authorization protocols, and modular responsive frameworks that render at 60fps on mobile viewports.",
-        techStack: ["React", "Node.js", "Express", "MongoDB", "Chart.js"],
-        timeline: "6 Weeks",
-        github: "https://github.com",
-        live: "#",
+        longDesc: "An automated attendance tracking platform optimized for academic and workspace settings. It uses QR scanning and secure role authentication, logging attendee logs and processing live counts into a beautiful visual dashboard for administrators.",
+        techStack: ["HTML5", "CSS Grid", "Node.js", "Express", "MongoDB", "Chart.js"],
+        timeline: "3 Weeks",
+        github: "https://github.com/Kritika-Panwar-151",
+        live: "https://github.com/Kritika-Panwar-151",
         color: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)"
     },
     "3": {
-        title: "Orbit Chat Hub",
-        category: "Interactive Design",
-        longDesc: "Orbit delivers standard messaging threads using WebSocket pipes to ensure real-time notification responses. We added glowing canvas visual components, custom emojis, and a sliding drawer panel layout.",
-        techStack: ["HTML5", "Vanilla CSS", "JavaScript", "WebSockets", "Node.js"],
-        timeline: "3 Weeks",
-        github: "https://github.com",
-        live: "#",
+        title: "HostelGo Platform",
+        category: "Fullstack Web App",
+        longDesc: "HostelGo is an end-to-end facility management web portal designed for student hostels. It automates room reservations, check-ins, mess calendars, payment records, and raises instant repair tickets for wardens.",
+        techStack: ["React.js", "Node.js", "Express", "MySQL", "Tailwind CSS"],
+        timeline: "5 Weeks",
+        github: "https://github.com/Kritika-Panwar-151",
+        live: "https://github.com/Kritika-Panwar-151",
         color: "linear-gradient(135deg, #10b981 0%, #3b82f6 100%)"
+    },
+    "4": {
+        title: "Slow Learners Portal",
+        category: "Frontend & Design",
+        longDesc: "An intelligent, adaptive educational auxiliary system built to support student cognitive curves. It maps progress through interactive tests and quiz channels, automatically suggesting custom visual content and tracking growth.",
+        techStack: ["HTML5", "CSS Flexbox", "JavaScript", "Google Charts", "localStorage API"],
+        timeline: "4 Weeks",
+        github: "https://github.com/Kritika-Panwar-151",
+        live: "https://github.com/Kritika-Panwar-151",
+        color: "linear-gradient(135deg, #f59e0b 0%, #ec4899 100%)"
     }
 };
 
