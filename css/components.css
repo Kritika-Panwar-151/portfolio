@@ -1427,3 +1427,138 @@ textarea.form-input ~ .form-label {
         display: none !important;
     }
 }
+
+/* ==========================================================================
+   17. 3D FLOATING SOCIAL CARDS
+   ========================================================================== */
+.floating-3d-container {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    pointer-events: none;
+}
+
+.floater-3d-card {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(20deg) rotateY(20deg);
+    transition: transform var(--transition-normal), border-color var(--transition-fast), box-shadow var(--transition-normal);
+}
+
+.floater-3d-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--floater-glow);
+    opacity: 0.15;
+    z-index: -1;
+    filter: blur(10px);
+    transition: opacity var(--transition-fast);
+}
+
+.floater-github {
+    --floater-glow: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+    animation: floatCard1 5s infinite alternate ease-in-out;
+}
+
+.floater-linkedin {
+    --floater-glow: linear-gradient(135deg, #0077b5 0%, #00a0dc 100%);
+    animation: floatCard2 6s infinite alternate ease-in-out;
+    animation-delay: -1.5s;
+}
+
+.floater-instagram {
+    --floater-glow: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    animation: floatCard3 5.5s infinite alternate ease-in-out;
+    animation-delay: -3.2s;
+}
+
+.floater-3d-card .floater-emoji {
+    font-size: 1.8rem;
+    transition: transform var(--transition-normal);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+.floater-3d-card:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(10deg) translateZ(10px) scale(1.1) !important;
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 25px 45px rgba(var(--accent-primary-rgb), 0.25) !important;
+}
+
+.floater-3d-card:hover::before {
+    opacity: 0.4;
+}
+
+.floater-3d-card:hover .floater-emoji {
+    transform: translateZ(15px) scale(1.15);
+}
+
+/* Tooltips */
+.floater-3d-card::after {
+    content: attr(data-label);
+    position: absolute;
+    left: 80px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    box-shadow: var(--card-shadow);
+    white-space: nowrap;
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.floater-3d-card:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+@keyframes floatCard1 {
+    0% { transform: perspective(1000px) rotateX(20deg) rotateY(20deg) translateY(0); }
+    100% { transform: perspective(1000px) rotateX(15deg) rotateY(25deg) translateY(-15px); }
+}
+
+@keyframes floatCard2 {
+    0% { transform: perspective(1000px) rotateX(25deg) rotateY(15deg) translateY(0); }
+    100% { transform: perspective(1000px) rotateX(20deg) rotateY(20deg) translateY(-18px); }
+}
+
+@keyframes floatCard3 {
+    0% { transform: perspective(1000px) rotateX(15deg) rotateY(25deg) translateY(0); }
+    100% { transform: perspective(1000px) rotateX(25deg) rotateY(15deg) translateY(-14px); }
+}
+
+@media (max-width: 768px) {
+    .floating-3d-container {
+        display: none !important;
+    }
+}
