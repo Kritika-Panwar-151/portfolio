@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initContactWidgets();
     initCard3DTilt();
     initBentoExpandableBio();
+    initLabVideoController();
 });
 
 /* ==========================================================================
@@ -726,47 +727,83 @@ function initCard3DTilt() {
    14. BENTO EXPANDABLE BIO CARD
    ========================================================================== */
 function initBentoExpandableBio() {
+    const card = document.getElementById('bento-bio-card');
     const revealBtn = document.getElementById('reveal-bio-btn');
-    const teaser = document.getElementById('bio-teaser');
-    const expandable = document.getElementById('bio-expandable');
     const signature = document.getElementById('bio-signature');
 
-    if (!revealBtn || !teaser || !expandable) return;
+    if (!card || !revealBtn) return;
 
-    revealBtn.addEventListener('click', () => {
-        const isCollapsed = expandable.style.maxHeight === '0px' || !expandable.style.maxHeight || expandable.style.maxHeight === '0';
+    revealBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Stop event propagation to prevent conflicting transforms
 
-        if (isCollapsed) {
-            // Expand Bio
-            expandable.style.maxHeight = '200px';
-            expandable.style.opacity = '1';
-            
-            // Fade out teaser
-            teaser.style.opacity = '0';
-            teaser.style.transform = 'translateY(-10px)';
-            
-            // Glow signature and morph button
+        const isExpanded = card.classList.toggle('expanded');
+        const btnSpan = revealBtn.querySelector('span');
+
+        if (isExpanded) {
+            if (btnSpan) btnSpan.textContent = 'Minimize';
             if (signature) signature.style.opacity = '0.9';
-            revealBtn.querySelector('span').textContent = 'Minimize';
-            
-            setTimeout(() => {
-                teaser.style.display = 'none';
-            }, 300);
         } else {
-            // Collapse Bio
-            expandable.style.maxHeight = '0px';
-            expandable.style.opacity = '0';
-            
-            // Re-show teaser
-            teaser.style.display = 'block';
-            setTimeout(() => {
-                teaser.style.opacity = '1';
-                teaser.style.transform = 'translateY(0)';
-            }, 50);
-
-            // Revert signature & button text
+            if (btnSpan) btnSpan.textContent = 'Discover My Story';
             if (signature) signature.style.opacity = '0.3';
-            revealBtn.querySelector('span').textContent = 'Discover My Story';
         }
+    });
+}
+
+/* ==========================================================================
+   15. PROJECT IMPLEMENTATION LAB VIDEO CONTROLLER
+   ========================================================================== */
+function initLabVideoController() {
+    const playlistCards = document.querySelectorAll('.lab-playlist-card');
+    const videoPlayer = document.getElementById('lab-video-player');
+    const videoSource = document.getElementById('lab-video-source');
+    const fadeOverlay = document.getElementById('video-fade-overlay');
+
+    if (playlistCards.length === 0 || !videoPlayer || !videoSource || !fadeOverlay) return;
+
+    playlistCards.forEach(card => {
+        card.addEventListener('click', () => {
+            if (card.classList.contains('active')) return;
+
+            // Remove active states from other cards
+            playlistCards.forEach(c => {
+                c.classList.remove('active');
+                const svg = c.querySelector('svg');
+                if (svg) {
+                    svg.setAttribute('fill', 'none');
+                }
+            });
+
+            // Mark this card as active
+            card.classList.add('active');
+            const svg = card.querySelector('svg');
+            if (svg) {
+                svg.setAttribute('fill', 'var(--accent-primary)');
+            }
+
+            const videoUrl = card.getAttribute('data-video');
+
+            // Widescreen fade out cross-fade animation
+            fadeOverlay.style.opacity = '1';
+            
+            setTimeout(() => {
+                videoSource.setAttribute('src', videoUrl);
+                videoPlayer.load();
+                
+                // Trigger play
+                const playPromise = videoPlayer.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        // Play started successfully
+                    }).catch(error => {
+                        console.log("Auto-play blocked by browser. User interaction required: ", error);
+                    });
+                }
+
+                setTimeout(() => {
+                    fadeOverlay.style.opacity = '0';
+                }, 150);
+            }, 300);
+        });
     });
 }

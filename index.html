@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Developer Portfolio</title>
+    <title>Kritika Panwar | Creative Developer Portfolio</title>
+    <script>
+        // Immediately set theme to prevent dark-light flashing on load
+        (function() {
+            const cachedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', cachedTheme);
+        })();
+    </script>
     
     <!-- Meta Tags for SEO -->
-    <meta name="description" content="A premium, highly interactive portfolio showcasing creative development work, skills, and clients testimonials.">
-    <meta name="keywords" content="Creative Developer, Portfolio, Frontend Engineer, Glassmorphism, Bento Grid">
-    <meta name="author" content="Portfolio Creator">
+    <meta name="description" content="Kritika Panwar | A premium, highly interactive portfolio showcasing creative development work, skills, and client testimonials.">
+    <meta name="keywords" content="Kritika Panwar, Creative Developer, Portfolio, Frontend Engineer, Glassmorphism, Bento Grid">
+    <meta name="author" content="Kritika Panwar">
     
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
@@ -305,6 +312,64 @@
     </section>
 
     <!-- ==========================================================================
+       4.5. PROJECT IMPLEMENTATION LAB (VIDEO SHOWCASE)
+       ========================================================================== -->
+    <section class="section" id="lab" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-title-wrap reveal-element">
+                <span class="section-subtitle">Implementation Demos</span>
+                <h2 class="section-title">Project Walkthroughs</h2>
+            </div>
+
+            <div class="lab-layout reveal-element" style="display: grid; grid-template-columns: 1.8fr 1fr; gap: 40px; align-items: center; transition-delay: 0.1s;">
+                <!-- Main Widescreen Screen Mockup -->
+                <div class="lab-screen-wrapper glass-card" style="padding: 12px; background: rgba(0,0,0,0.5); border-radius: var(--radius-lg); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+                    <div class="lab-screen-header" style="display: flex; gap: 6px; margin-bottom: 10px; padding-left: 6px;">
+                        <span style="width: 10px; height: 10px; border-radius: var(--radius-full); background: #ef4444; display: inline-block;"></span>
+                        <span style="width: 10px; height: 10px; border-radius: var(--radius-full); background: #f59e0b; display: inline-block;"></span>
+                        <span style="width: 10px; height: 10px; border-radius: var(--radius-full); background: #10b981; display: inline-block;"></span>
+                    </div>
+                    <div style="position: relative; width: 100%; aspect-ratio: 16/9; background: #000; border-radius: var(--radius-md); overflow: hidden;">
+                        <!-- HTML5 Video Player -->
+                        <video id="lab-video-player" style="width: 100%; height: 100%; object-fit: cover;" controls playsinline muted loop>
+                            <source id="lab-video-source" src="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-computer-34346-large.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div id="video-fade-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-main); opacity: 0; transition: opacity var(--transition-fast); pointer-events: none; z-index: 5;"></div>
+                    </div>
+                </div>
+
+                <!-- Video Triggers Playlist -->
+                <div class="lab-playlist" style="display: flex; flex-direction: column; gap: 16px;">
+                    <div class="lab-playlist-card glass-card active" data-video="https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-his-computer-34346-large.mp4" style="padding: 20px; cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);">
+                        <h4 style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-primary)" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Aetheria eCommerce Demo
+                        </h4>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary);">3D product transitions, category sorting filters, and cart logic execution demo.</p>
+                    </div>
+
+                    <div class="lab-playlist-card glass-card" data-video="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-developer-typing-on-a-keyboard-40546-large.mp4" style="padding: 20px; cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);">
+                        <h4 style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Nova Dashboard Analytics
+                        </h4>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary);">Dynamic charts drawing, responsive sidebar animations, and data mutations showcase.</p>
+                    </div>
+
+                    <div class="lab-playlist-card glass-card" data-video="https://assets.mixkit.co/videos/preview/mixkit-typing-on-a-laptop-keyboard-40618-large.mp4" style="padding: 20px; cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);">
+                        <h4 style="margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Orbit WebSocket Chat Hub
+                        </h4>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary);">Real-time socket messages pipelines, notification counters, and layout resizing demo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
        5. CLIENT EXPERIENCES (TESTIMONIALS SLIDER)
        ========================================================================== -->
     <section class="section" id="testimonials" style="background: rgba(255, 255, 255, 0.01);">
@@ -385,7 +450,7 @@
 
             <div class="socials-grid reveal-element" style="transition-delay: 0.15s;">
                 <!-- GitHub Card -->
-                <a href="https://github.com" target="_blank" class="social-card glass-card social-github" id="social-github-card">
+                <a href="https://github.com/Kritika-Panwar-151" target="_blank" class="social-card glass-card social-github" id="social-github-card">
                     <div class="social-card-bg-fill"></div>
                     <div class="social-icon-box">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -404,7 +469,7 @@
                 </a>
 
                 <!-- LinkedIn Card -->
-                <a href="https://linkedin.com" target="_blank" class="social-card glass-card social-linkedin" id="social-linkedin-card">
+                <a href="https://www.linkedin.com/in/kritika-panwar-601721312/" target="_blank" class="social-card glass-card social-linkedin" id="social-linkedin-card">
                     <div class="social-card-bg-fill"></div>
                     <div class="social-icon-box">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -466,9 +531,9 @@
                         <p style="font-size: 0.85rem; margin-bottom: 24px;">Click the card below to copy my primary email address instantly to your clipboard:</p>
                         
                         <!-- Clipboard interactive container -->
-                        <div class="copy-email-container" id="copy-email-widget" data-email="hello@portfolio.com">
+                        <div class="copy-email-container" id="copy-email-widget" data-email="kritikapanwar151@gmail.com">
                             <div class="copy-toast" id="copy-toast">Copied! 👍</div>
-                            <div class="email-address-text">hello@portfolio.com</div>
+                            <div class="email-address-text">kritikapanwar151@gmail.com</div>
                             <div class="copy-icon-wrap">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -559,7 +624,7 @@
                         <div class="modal-info-value" id="modal-sidebar-timeline">4 Weeks</div>
                     </div>
                     <div class="modal-links">
-                        <a href="https://github.com" target="_blank" class="btn btn-primary magnetic-btn" style="width: 100%;" id="modal-github-link">
+                        <a href="https://github.com/Kritika-Panwar-151" target="_blank" class="btn btn-primary magnetic-btn" style="width: 100%;" id="modal-github-link">
                             View GitHub
                         </a>
                         <a href="#" target="_blank" class="btn btn-secondary magnetic-btn" style="width: 100%;" id="modal-live-link">

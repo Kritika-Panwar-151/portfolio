@@ -256,12 +256,12 @@
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 180px;
-    gap: 24px;
+    grid-auto-rows: 145px;
+    gap: 18px;
 }
 
 .bento-item {
-    padding: 32px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -272,6 +272,7 @@
 .bento-bio {
     grid-column: span 2;
     grid-row: span 2;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .bento-skills {
@@ -311,18 +312,45 @@
 
 /* Bento Details Styling */
 .bento-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+.bento-bio-teaser {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    transition: opacity var(--transition-fast), transform var(--transition-fast), max-height var(--transition-normal), margin-bottom var(--transition-normal);
+}
+
+.bento-bio.expanded .bento-bio-teaser {
+    opacity: 0;
+    transform: translateY(-8px);
+    max-height: 0;
+    margin-bottom: 0 !important;
+    pointer-events: none;
+}
+
+.bento-bio-expandable {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal), opacity var(--transition-normal);
+}
+
+.bento-bio.expanded .bento-bio-expandable {
+    max-height: 150px;
+    opacity: 1;
+}
+
 .bento-bio-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .bento-signature {
@@ -1293,5 +1321,29 @@ textarea.form-input ~ .form-label {
         flex: 0 0 100%;
         height: auto;
         padding: 24px;
+    }
+}
+
+/* ==========================================================================
+   15. PROJECT IMPLEMENTATION LAB SELECTOR STYLES
+   ========================================================================== */
+.lab-playlist-card {
+    border: 1px solid var(--border-color);
+}
+
+.lab-playlist-card.active {
+    border-color: var(--accent-primary) !important;
+    background: rgba(var(--accent-primary-rgb), 0.05) !important;
+}
+
+.lab-playlist-card:hover:not(.active) {
+    border-color: var(--border-color-hover) !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+}
+
+@media (max-width: 768px) {
+    .lab-layout {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
     }
 }
