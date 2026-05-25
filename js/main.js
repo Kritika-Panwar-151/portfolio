@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTestimonialsSlider();
     initContactWidgets();
     initCard3DTilt();
+    initBentoExpandableBio();
 });
 
 /* ==========================================================================
@@ -718,5 +719,54 @@ function initCard3DTilt() {
         card.addEventListener('mouseleave', () => {
             card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
         });
+    });
+}
+
+/* ==========================================================================
+   14. BENTO EXPANDABLE BIO CARD
+   ========================================================================== */
+function initBentoExpandableBio() {
+    const revealBtn = document.getElementById('reveal-bio-btn');
+    const teaser = document.getElementById('bio-teaser');
+    const expandable = document.getElementById('bio-expandable');
+    const signature = document.getElementById('bio-signature');
+
+    if (!revealBtn || !teaser || !expandable) return;
+
+    revealBtn.addEventListener('click', () => {
+        const isCollapsed = expandable.style.maxHeight === '0px' || !expandable.style.maxHeight || expandable.style.maxHeight === '0';
+
+        if (isCollapsed) {
+            // Expand Bio
+            expandable.style.maxHeight = '200px';
+            expandable.style.opacity = '1';
+            
+            // Fade out teaser
+            teaser.style.opacity = '0';
+            teaser.style.transform = 'translateY(-10px)';
+            
+            // Glow signature and morph button
+            if (signature) signature.style.opacity = '0.9';
+            revealBtn.querySelector('span').textContent = 'Minimize';
+            
+            setTimeout(() => {
+                teaser.style.display = 'none';
+            }, 300);
+        } else {
+            // Collapse Bio
+            expandable.style.maxHeight = '0px';
+            expandable.style.opacity = '0';
+            
+            // Re-show teaser
+            teaser.style.display = 'block';
+            setTimeout(() => {
+                teaser.style.opacity = '1';
+                teaser.style.transform = 'translateY(0)';
+            }, 50);
+
+            // Revert signature & button text
+            if (signature) signature.style.opacity = '0.3';
+            revealBtn.querySelector('span').textContent = 'Discover My Story';
+        }
     });
 }

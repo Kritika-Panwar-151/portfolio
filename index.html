@@ -125,17 +125,29 @@
             
             <div class="bento-grid reveal-element" style="transition-delay: 0.15s;">
                 <!-- Bio Card -->
-                <div class="bento-item bento-bio glass-card">
-                    <div>
-                        <div class="bento-title">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                            Who I Am
+                <div class="bento-item bento-bio glass-card" id="bento-bio-card">
+                    <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                        <div>
+                            <div class="bento-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                Who I Am
+                            </div>
+                            <p class="bento-bio-teaser" id="bio-teaser" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px; transition: opacity var(--transition-fast), transform var(--transition-fast);">
+                                Want to learn more about the developer behind the code?
+                            </p>
+                            <div class="bento-bio-expandable" id="bio-expandable" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height var(--transition-normal), opacity var(--transition-normal);">
+                                <p class="bento-bio-text" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                                    Hello! I am a passionate developer dedicated to building fluid, visually gorgeous web systems. I combine aesthetic design values with clean, robust code to create digital interfaces that are a joy to interact with.
+                                </p>
+                            </div>
                         </div>
-                        <p class="bento-bio-text">
-                            Hello! I am a passionate developer dedicated to building fluid, visually gorgeous web systems. I combine aesthetic design values with clean, robust code to create digital interfaces that are a joy to interact with.
-                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: auto; padding-top: 15px;">
+                            <button class="btn btn-secondary magnetic-btn" id="reveal-bio-btn" style="padding: 8px 18px; font-size: 0.8rem; height: auto;">
+                                <span>Discover My Story</span>
+                            </button>
+                            <div class="bento-signature" id="bio-signature" style="opacity: 0.3; font-size: 1.1rem; transition: opacity var(--transition-normal);">Creative Developer</div>
+                        </div>
                     </div>
-                    <div class="bento-signature">Creative Developer</div>
                 </div>
 
                 <!-- Skills Card -->
