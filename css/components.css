@@ -144,14 +144,34 @@
 /* ==========================================================================
    2. HERO SECTION
    ========================================================================== */
+.hero-container-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 40px;
+    min-height: calc(100vh - 80px);
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+@media (min-width: 992px) {
+    .hero-container-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 60px;
+        text-align: left;
+    }
+    .hero-text-side.hero-content {
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: calc(100vh - 80px);
-    padding-top: 60px;
 }
 
 .hero-subtitle {
@@ -199,6 +219,176 @@
 .hero-buttons {
     display: flex;
     gap: 16px;
+}
+
+/* Hero Visual Orbit side */
+.hero-visual-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.visual-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphic JSON Card */
+.ide-mock-card {
+    width: 280px;
+    padding: 18px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    position: relative;
+    z-index: 10;
+    transform: perspective(800px) rotateX(12deg) rotateY(-12deg);
+    transition: transform var(--transition-normal);
+}
+
+.ide-mock-card:hover {
+    transform: perspective(800px) rotateX(4deg) rotateY(-4deg) translateY(-4px);
+}
+
+.ide-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.ide-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+}
+
+.ide-dot.red { background: #ef4444; }
+.ide-dot.yellow { background: #f59e0b; }
+.ide-dot.green { background: #10b981; }
+
+.ide-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    margin-left: 6px;
+    font-family: var(--font-heading);
+}
+
+.ide-body pre {
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.json-key { color: var(--accent-primary); }
+.json-val { color: var(--accent-secondary); }
+
+/* Rotating orbits */
+.orbit-circle {
+    position: absolute;
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    pointer-events: none;
+}
+
+.orbit-1 {
+    width: 320px;
+    height: 320px;
+    animation: rotateClockwise 20s infinite linear;
+}
+
+.orbit-2 {
+    width: 240px;
+    height: 240px;
+    animation: rotateCounterClockwise 15s infinite linear;
+}
+
+/* Floating Tech badges */
+.floating-orb {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 15;
+    cursor: pointer;
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.floating-orb:hover {
+    transform: scale(1.15) !important;
+    border-color: var(--accent-primary);
+    box-shadow: 0 15px 30px rgba(var(--accent-primary-rgb), 0.2);
+}
+
+.orb-react {
+    top: 15%;
+    right: 2%;
+    color: #00d8ff;
+    animation: bobOrb1 4s infinite alternate ease-in-out;
+}
+
+.orb-js {
+    bottom: 10%;
+    right: 8%;
+    color: #f7df1e;
+    animation: bobOrb2 4.5s infinite alternate ease-in-out;
+}
+
+.orb-css {
+    bottom: 20%;
+    left: 2%;
+    color: #264de4;
+    animation: bobOrb1 3.5s infinite alternate ease-in-out;
+}
+
+.orb-figma {
+    top: 8%;
+    left: 10%;
+    color: #f24e1e;
+    animation: bobOrb2 5s infinite alternate ease-in-out;
+}
+
+@keyframes rotateClockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes bobOrb1 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-12px) rotate(8deg); }
+}
+
+@keyframes bobOrb2 {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(-8deg); }
 }
 
 /* Scroll Indicator */

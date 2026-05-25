@@ -134,29 +134,64 @@
        2. HERO SECTION
        ========================================================================== -->
     <section class="section" id="hero" style="padding: 0;">
-        <div class="container hero-content">
-            <div class="hero-subtitle reveal-element active">
-                <span class="hero-pulse-dot"></span> Available for new opportunities
-            </div>
-            <h1 class="hero-title reveal-element active" style="transition-delay: 0.1s;">
-                Crafting Digital <br><span class="hero-gradient-text">Experiences</span> That Wow
-            </h1>
-            <p class="hero-description reveal-element active" style="transition-delay: 0.2s;">
-                I'm a creative frontend developer specializing in designing and building exceptionally high-fidelity, interactive, and responsive websites.
-            </p>
-            <div class="hero-buttons reveal-element active" style="transition-delay: 0.3s;">
-                <a href="#projects" class="btn btn-primary magnetic-btn" id="btn-hero-projects">
-                    View Projects
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </a>
-                <a href="#contact" class="btn btn-secondary magnetic-btn" id="btn-hero-contact">Let's Talk</a>
+        <div class="container hero-container-grid">
+            <div class="hero-text-side hero-content">
+                <div class="hero-subtitle reveal-element active">
+                    <span class="hero-pulse-dot"></span> Available for new opportunities
+                </div>
+                <h1 class="hero-title reveal-element active" style="transition-delay: 0.1s;">
+                    Crafting Digital <br><span class="hero-gradient-text">Experiences</span> That Wow
+                </h1>
+                <p class="hero-description reveal-element active" style="transition-delay: 0.2s;">
+                    I'm a creative frontend developer specializing in designing and building exceptionally high-fidelity, interactive, and responsive websites.
+                </p>
+                <div class="hero-buttons reveal-element active" style="transition-delay: 0.3s;">
+                    <a href="#projects" class="btn btn-primary magnetic-btn" id="btn-hero-projects">
+                        <span>View Projects</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary magnetic-btn" id="btn-hero-contact">Let's Talk</a>
+                </div>
             </div>
 
-            <div class="scroll-indicator">
-                <span>Scroll Down</span>
-                <div class="mouse-scroller">
-                    <span class="mouse-wheel"></span>
+            <div class="hero-visual-side reveal-element active" style="transition-delay: 0.2s;">
+                <div class="visual-wrapper">
+                    <!-- Glassmorphic Mock IDE Card -->
+                    <div class="ide-mock-card glass-card">
+                        <div class="ide-header">
+                            <span class="ide-dot red"></span>
+                            <span class="ide-dot yellow"></span>
+                            <span class="ide-dot green"></span>
+                            <span class="ide-title">kritika.json</span>
+                        </div>
+                        <div class="ide-body">
+                            <pre><code>{
+  <span class="json-key">"name"</span>: <span class="json-val">"Kritika Panwar"</span>,
+  <span class="json-key">"major"</span>: <span class="json-val">"Computer Science & Eng"</span>,
+  <span class="json-key">"college"</span>: <span class="json-val">"BMSCE, Bangalore"</span>,
+  <span class="json-key">"cgpa"</span>: <span class="json-val">"9.28 / 10.0"</span>,
+  <span class="json-key">"skills"</span>: [<span class="json-val">"React"</span>, <span class="json-val">"Node"</span>, <span class="json-val">"UI/UX"</span>]
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <!-- Ambient Orbited Circles -->
+                    <div class="orbit-circle orbit-1"></div>
+                    <div class="orbit-circle orbit-2"></div>
+                    
+                    <!-- Floating Tech Orbs -->
+                    <div class="floating-orb orb-react" title="React.js">⚛️</div>
+                    <div class="floating-orb orb-js" title="JavaScript">JS</div>
+                    <div class="floating-orb orb-css" title="CSS3">CSS</div>
+                    <div class="floating-orb orb-figma" title="Figma UI/UX">🎨</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="mouse-scroller">
+                <span class="mouse-wheel"></span>
             </div>
         </div>
     </section>
@@ -176,46 +211,43 @@
                 <div class="bento-item bento-bio glass-card" id="bento-bio-card">
                     <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
                         <div>
-                            <div class="bento-title">
+                            <div class="bento-title" style="margin-bottom: 6px;">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                 Who I Am
                             </div>
-                            <p class="bento-bio-teaser" id="bio-teaser" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px; transition: opacity var(--transition-fast), transform var(--transition-fast);">
-                                Hello! I'm Kritika Panwar, a Computer Science & Engineering student at BMSCE, Bangalore. I specialize in crafting exceptionally high-fidelity, interactive frontends and user-friendly digital tools that solve real-world problems.
+                            <p style="font-size: 0.85rem; line-height: 1.4; color: var(--text-secondary); margin-bottom: 12px;">
+                                Computer Science & Engineering student at BMSCE, Bangalore. Focus on building highly visual, clean, and interactive tools.
                             </p>
-                            <div class="bento-bio-expandable" id="bio-expandable" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height var(--transition-normal), opacity var(--transition-normal);">
-                                <div class="bento-bio-tabs">
-                                    <button class="bio-tab-btn active" data-tab="about-tab">About</button>
-                                    <button class="bio-tab-btn" data-tab="edu-tab">Education</button>
-                                    <button class="bio-tab-btn" data-tab="ach-tab">Achievements</button>
+                            <div class="bento-bio-tabs">
+                                <button class="bio-tab-btn active" data-tab="about-tab">About</button>
+                                <button class="bio-tab-btn" data-tab="edu-tab">Education</button>
+                                <button class="bio-tab-btn" data-tab="ach-tab">Achievements</button>
+                            </div>
+                            <div class="bento-bio-tab-content">
+                                <div class="bio-tab-panel active" id="about-tab">
+                                    <p class="bento-bio-text" style="font-size: 0.82rem; line-height: 1.5; color: var(--text-secondary); margin-bottom: 0;">
+                                        Hi! I'm Kritika. From community-driven platforms to automated trackers, I combine user-friendly glassmorphic frontends with clean, robust codebases to solve real-world problems.
+                                    </p>
                                 </div>
-                                <div class="bento-bio-tab-content">
-                                    <div class="bio-tab-panel active" id="about-tab">
-                                        <p class="bento-bio-text">
-                                            From community-driven portals to secure trackers, I blend immersive aesthetics with highly performant vanilla architectures. I focus on modular interfaces, glassmorphic themes, and responsive design fusions.
-                                        </p>
+                                <div class="bio-tab-panel" id="edu-tab">
+                                    <div class="edu-item">
+                                        <span class="edu-year">2023 - 2027</span>
+                                        <div class="edu-title">B.E. Computer Science & Engineering</div>
+                                        <div class="edu-school">B.M.S. College of Engineering (BMSCE), Bangalore</div>
+                                        <div class="edu-school" style="color: var(--accent-primary); font-weight: 700; margin-top: 2px;">Current Score: 9.28 CGPA / 10.0</div>
                                     </div>
-                                    <div class="bio-tab-panel" id="edu-tab">
-                                        <div class="edu-item">
-                                            <span class="edu-year">2023 - 2027</span>
-                                            <div class="edu-title">B.E. Computer Science & Engineering</div>
-                                            <div class="edu-school">B.M.S. College of Engineering (BMSCE), Bangalore</div>
-                                        </div>
-                                    </div>
-                                    <div class="bio-tab-panel" id="ach-tab">
-                                        <ul class="ach-list">
-                                            <li><strong>GirlScript Summer of Code '26</strong>: Active contributor, developing features for open-source frontend architectures.</li>
-                                            <li><strong>Hackfinity & Tech Tycoon</strong>: Competed and designed high-fidelity functional prototypes under pressure.</li>
-                                        </ul>
-                                    </div>
+                                </div>
+                                <div class="bio-tab-panel" id="ach-tab">
+                                    <ul class="ach-list" style="font-size: 0.78rem; gap: 6px;">
+                                        <li><strong>GirlScript Summer of Code '26</strong>: Key contributor, building premium web interfaces.</li>
+                                        <li><strong>Hackfinity & Tech Tycoon</strong>: Finalist, coded high-fidelity functional prototypes.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: auto; padding-top: 15px;">
-                            <button class="btn btn-secondary magnetic-btn" id="reveal-bio-btn" style="padding: 8px 18px; font-size: 0.8rem; height: auto;">
-                                <span>Discover My Story</span>
-                            </button>
-                            <div class="bento-signature" id="bio-signature" style="opacity: 0.3; font-size: 1.1rem; transition: opacity var(--transition-normal);">Kritika Panwar</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.03);">
+                            <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Creative Engineer</span>
+                            <div class="bento-signature" id="bio-signature" style="font-size: 1.1rem;">Kritika Panwar</div>
                         </div>
                     </div>
                 </div>

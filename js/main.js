@@ -741,23 +741,25 @@ function initBentoExpandableBio() {
     const revealBtn = document.getElementById('reveal-bio-btn');
     const signature = document.getElementById('bio-signature');
 
-    if (!card || !revealBtn) return;
+    if (!card) return;
 
-    revealBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation(); // Stop event propagation to prevent conflicting transforms
+    if (revealBtn) {
+        revealBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation(); // Stop event propagation to prevent conflicting transforms
 
-        const isExpanded = card.classList.toggle('expanded');
-        const btnSpan = revealBtn.querySelector('span');
+            const isExpanded = card.classList.toggle('expanded');
+            const btnSpan = revealBtn.querySelector('span');
 
-        if (isExpanded) {
-            if (btnSpan) btnSpan.textContent = 'Minimize';
-            if (signature) signature.style.opacity = '0.9';
-        } else {
-            if (btnSpan) btnSpan.textContent = 'Discover My Story';
-            if (signature) signature.style.opacity = '0.3';
-        }
-    });
+            if (isExpanded) {
+                if (btnSpan) btnSpan.textContent = 'Minimize';
+                if (signature) signature.style.opacity = '0.9';
+            } else {
+                if (btnSpan) btnSpan.textContent = 'Discover My Story';
+                if (signature) signature.style.opacity = '0.3';
+            }
+        });
+    }
 
     // Tab switching inside expandable bio
     const tabBtns = card.querySelectorAll('.bio-tab-btn');
