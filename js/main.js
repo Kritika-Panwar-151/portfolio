@@ -758,6 +758,28 @@ function initBentoExpandableBio() {
             if (signature) signature.style.opacity = '0.3';
         }
     });
+
+    // Tab switching inside expandable bio
+    const tabBtns = card.querySelectorAll('.bio-tab-btn');
+    const tabPanels = card.querySelectorAll('.bio-tab-panel');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const targetTab = btn.getAttribute('data-tab');
+
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanels.forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            const targetPanel = card.querySelector(`#${targetTab}`);
+            if (targetPanel) {
+                targetPanel.classList.add('active');
+            }
+        });
+    });
 }
 
 /* ==========================================================================

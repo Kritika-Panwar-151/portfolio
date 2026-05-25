@@ -181,12 +181,34 @@
                                 Who I Am
                             </div>
                             <p class="bento-bio-teaser" id="bio-teaser" style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px; transition: opacity var(--transition-fast), transform var(--transition-fast);">
-                                Want to learn more about my coding journey?
+                                Hello! I'm Kritika Panwar, a Computer Science & Engineering student at BMSCE, Bangalore. I specialize in crafting exceptionally high-fidelity, interactive frontends and user-friendly digital tools that solve real-world problems.
                             </p>
                             <div class="bento-bio-expandable" id="bio-expandable" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height var(--transition-normal), opacity var(--transition-normal);">
-                                <p class="bento-bio-text" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-                                    Hello! I'm Kritika Panwar, a student software engineer focusing on building highly visual, clean, and impactful applications. From community-driven platforms to automated trackers, I combine user-friendly designs with clean codebase architectures to solve real-world problems.
-                                </p>
+                                <div class="bento-bio-tabs">
+                                    <button class="bio-tab-btn active" data-tab="about-tab">About</button>
+                                    <button class="bio-tab-btn" data-tab="edu-tab">Education</button>
+                                    <button class="bio-tab-btn" data-tab="ach-tab">Achievements</button>
+                                </div>
+                                <div class="bento-bio-tab-content">
+                                    <div class="bio-tab-panel active" id="about-tab">
+                                        <p class="bento-bio-text">
+                                            From community-driven portals to secure trackers, I blend immersive aesthetics with highly performant vanilla architectures. I focus on modular interfaces, glassmorphic themes, and responsive design fusions.
+                                        </p>
+                                    </div>
+                                    <div class="bio-tab-panel" id="edu-tab">
+                                        <div class="edu-item">
+                                            <span class="edu-year">2023 - 2027</span>
+                                            <div class="edu-title">B.E. Computer Science & Engineering</div>
+                                            <div class="edu-school">B.M.S. College of Engineering (BMSCE), Bangalore</div>
+                                        </div>
+                                    </div>
+                                    <div class="bio-tab-panel" id="ach-tab">
+                                        <ul class="ach-list">
+                                            <li><strong>GirlScript Summer of Code '26</strong>: Active contributor, developing features for open-source frontend architectures.</li>
+                                            <li><strong>Hackfinity & Tech Tycoon</strong>: Competed and designed high-fidelity functional prototypes under pressure.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: auto; padding-top: 15px;">
@@ -501,81 +523,6 @@
                     <span class="dot-indicator" data-index="1"></span>
                     <span class="dot-indicator" data-index="2"></span>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================================================
-       6. SOCIAL HUB GRID
-       ========================================================================== -->
-    <section class="section" id="social-hub">
-        <div class="container">
-            <div class="section-title-wrap reveal-element">
-                <span class="section-subtitle">Connections</span>
-                <h2 class="section-title">My Creative Hub</h2>
-            </div>
-
-            <div class="socials-grid reveal-element" style="transition-delay: 0.15s;">
-                <!-- GitHub Card -->
-                <a href="https://github.com/Kritika-Panwar-151" target="_blank" class="social-card glass-card social-github" id="social-github-card">
-                    <div class="social-card-bg-fill"></div>
-                    <div class="social-icon-box">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
-                    </div>
-                    <div class="social-details-wrap">
-                        <div>
-                            <div class="social-name">GitHub</div>
-                            <div class="social-subtext">View my public code repos</div>
-                        </div>
-                        <div class="social-link-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- LinkedIn Card -->
-                <a href="https://www.linkedin.com/in/kritika-panwar-601721312/" target="_blank" class="social-card glass-card social-linkedin" id="social-linkedin-card">
-                    <div class="social-card-bg-fill"></div>
-                    <div class="social-icon-box">
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </div>
-                    <div class="social-details-wrap">
-                        <div>
-                            <div class="social-name">LinkedIn</div>
-                            <div class="social-subtext">Connect with me professionally</div>
-                        </div>
-                        <div class="social-link-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Twitter / X Card -->
-                <a href="https://twitter.com" target="_blank" class="social-card glass-card social-twitter" id="social-twitter-card">
-                    <div class="social-card-bg-fill"></div>
-                    <div class="social-icon-box">
-                        <!-- Custom X Logo vector representation -->
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
-                            <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
-                        </svg>
-                    </div>
-                    <div class="social-details-wrap">
-                        <div>
-                            <div class="social-name">Twitter / X</div>
-                            <div class="social-subtext">Read my thoughts & tech threads</div>
-                        </div>
-                        <div class="social-link-icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </div>
-                    </div>
-                </a>
             </div>
         </div>
     </section>
