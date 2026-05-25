@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initCard3DTilt();
     initBentoExpandableBio();
     initLabVideoController();
+    initProjectSpotlight();
+    initSkillsInteractivePane();
 });
 
 /* ==========================================================================
@@ -840,4 +842,120 @@ function initLabVideoController() {
             }, 300);
         });
     });
+}
+
+/* ==========================================================================
+   16. PROJECT CARD RADIAL SPOTLIGHT EFFECT
+   ========================================================================== */
+function initProjectSpotlight() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+}
+
+/* ==========================================================================
+   17. BENTO TECH TOOLBOX INTERACTIVE PANE
+   ========================================================================== */
+function initSkillsInteractivePane() {
+    const badges = document.querySelectorAll('.skill-badge');
+    const titleEl = document.querySelector('.skill-details-title');
+    const pctEl = document.querySelector('.skill-details-pct');
+    const progressEl = document.querySelector('.skill-progress-bar');
+    const descEl = document.querySelector('.skill-details-desc');
+    
+    if (!badges.length || !titleEl || !pctEl || !progressEl || !descEl) return;
+
+    const skillDetails = {
+        "HTML5": {
+            title: "HTML5 / Semantic Layouts",
+            pct: "95%",
+            desc: "Structuring responsive structures, planning web layouts, and optimizing for SEO crawler discovery and semantic standards."
+        },
+        "CSS3": {
+            title: "CSS3 / Premium Visual Layouts",
+            pct: "95%",
+            desc: "Crafting fluid layouts, responsive grid/flexbox dynamics, hardware-accelerated transitions, and dynamic themes."
+        },
+        "JavaScript": {
+            title: "JavaScript / Canvas Engine",
+            pct: "90%",
+            desc: "Adding custom interaction triggers, functional state modules, audio waves, and dynamic performance elements."
+        },
+        "React / Next.js": {
+            title: "React / Next.js Frameworks",
+            pct: "88%",
+            desc: "Structuring virtual-DOM state hook architectures, creating reusable modular components, and caching payloads."
+        },
+        "Git & GitHub": {
+            title: "Git / Distributed Control",
+            pct: "85%",
+            desc: "Managing collaborative team commits, tracking branch histories, and deploying automated distribution targets."
+        },
+        "Figma": {
+            title: "Figma UI/UX Vector Prototyping",
+            pct: "82%",
+            desc: "Designing responsive UI screen layouts, high-fidelity mockups, auto-layouts, and user interaction mapping."
+        },
+        "Node.js": {
+            title: "Node.js Server Infrastructure",
+            pct: "80%",
+            desc: "Serving database payloads, designing clean server API endpoints, and organizing asynchronous middleware."
+        },
+        "Web Performance": {
+            title: "SEO & Bundle Speed Performance",
+            pct: "90%",
+            desc: "Lighthouse core web vitals speed optimization, image minifications, lazy loading assets, and search indexing."
+        }
+    };
+
+    const defaultTitle = "Core Competency";
+    const defaultPct = "90%";
+    const defaultDesc = "Hover over tags to see proficiency metrics and frameworks.";
+    const defaultWidth = "90%";
+
+    // Set initial default visual state
+    titleEl.textContent = defaultTitle;
+    pctEl.textContent = defaultPct;
+    progressEl.style.width = defaultWidth;
+    descEl.textContent = defaultDesc;
+
+    badges.forEach(badge => {
+        badge.addEventListener('mouseenter', () => {
+            const skillName = badge.getAttribute('data-skill');
+            const details = skillDetails[skillName] || {
+                title: skillName,
+                pct: "90%",
+                desc: badge.getAttribute('title') || "Proficiency metrics and frameworks."
+            };
+
+            // Apply hover active states
+            titleEl.textContent = details.title;
+            pctEl.textContent = details.pct;
+            progressEl.style.width = details.pct;
+            descEl.textContent = details.desc;
+        });
+    });
+
+    // Optionally reset on container leave
+    const container = document.querySelector('.skills-container');
+    if (container) {
+        container.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                const isHoveringAny = Array.from(badges).some(b => b.matches(':hover'));
+                if (!isHoveringAny) {
+                    titleEl.textContent = defaultTitle;
+                    pctEl.textContent = defaultPct;
+                    progressEl.style.width = defaultWidth;
+                    descEl.textContent = defaultDesc;
+                }
+            }, 300);
+        });
+    }
 }

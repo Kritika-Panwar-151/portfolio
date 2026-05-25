@@ -271,6 +271,17 @@
                             <div class="skill-badge" data-skill="Node.js" title="Serving database payloads and custom API channels.">Node.js</div>
                             <div class="skill-badge" data-skill="Web Performance" title="Enforcing fast, accessibility-friendly, SEO optimization.">SEO & Performance</div>
                         </div>
+                        
+                        <div class="skill-details-pane" style="margin-top: 14px; padding: 12px; background: rgba(255,255,255,0.01); border: 1px solid var(--border-color); border-radius: var(--radius-sm); position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 4px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                <div class="skill-details-title" style="font-size: 0.85rem; font-weight: 700; color: var(--accent-secondary);">Core Competency</div>
+                                <span class="skill-details-pct" style="font-size: 0.85rem; font-weight: 700; color: var(--text-primary); opacity: 0.7;">0%</span>
+                            </div>
+                            <div class="skill-progress-bar-wrap" style="width: 100%; height: 5px; background: rgba(255,255,255,0.05); border-radius: var(--radius-full); overflow: hidden; margin-top: 4px;">
+                                <div class="skill-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); transition: width 0.4s cubic-bezier(0.1, 0.76, 0.55, 0.94);"></div>
+                            </div>
+                            <div class="skill-details-desc" style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4; margin-top: 6px;">Hover over tags to see proficiency metrics and frameworks.</div>
+                        </div>
                     </div>
                 </div>
 
@@ -296,12 +307,25 @@
                 </div>
 
                 <!-- Stats Card -->
-                <div class="bento-item bento-stats glass-card">
-                    <div class="stat-box">
+                <div class="bento-item bento-stats glass-card" style="overflow: hidden; position: relative;">
+                    <div class="stats-growth-chart-bg">
+                        <svg class="growth-chart-svg" viewBox="0 0 100 40" fill="none" preserveAspectRatio="none">
+                            <path d="M0 40 C 20 30, 40 38, 60 18 C 80 5, 90 2, 100 0" stroke="rgba(255,255,255,0.03)" stroke-width="2" class="chart-line-bg"></path>
+                            <path d="M0 40 C 20 30, 40 38, 60 18 C 80 5, 90 2, 100 0" stroke="url(#chart-glow-gradient)" stroke-width="2" class="chart-line-active" stroke-dasharray="150" stroke-dashoffset="150"></path>
+                            <defs>
+                                <linearGradient id="chart-glow-gradient" x1="0" y1="1" x2="1" y2="0">
+                                    <stop offset="0%" stop-color="var(--accent-primary)"></stop>
+                                    <stop offset="100%" stop-color="var(--accent-secondary)"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="chart-pulse-dot"></div>
+                    </div>
+                    <div class="stat-box" style="position: relative; z-index: 5;">
                         <div class="stat-number" data-target="15">0</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
-                    <div class="stat-box" style="border-left: 1px solid var(--border-color); padding-left: 32px;">
+                    <div class="stat-box" style="border-left: 1px solid var(--border-color); padding-left: 32px; position: relative; z-index: 5;">
                         <div class="stat-number" data-target="8">0</div>
                         <div class="stat-label">Happy Clients</div>
                     </div>
@@ -511,6 +535,20 @@
                             Orbit WebSocket Chat Hub
                         </h4>
                         <p style="font-size: 0.82rem; color: var(--text-secondary);">Real-time socket messages pipelines, notification counters, and layout resizing demo.</p>
+                    </div>
+                    
+                    <!-- Dynamic Soundwave visualizer representing audio walkthrough tracks -->
+                    <div class="lab-audio-visualizer-container glass-card" style="padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 1px;">Audio Walkthrough active</span>
+                        <div class="sound-wave">
+                            <span class="bar bar-1"></span>
+                            <span class="bar bar-2"></span>
+                            <span class="bar bar-3"></span>
+                            <span class="bar bar-4"></span>
+                            <span class="bar bar-5"></span>
+                            <span class="bar bar-6"></span>
+                            <span class="bar bar-7"></span>
+                        </div>
                     </div>
                 </div>
             </div>
