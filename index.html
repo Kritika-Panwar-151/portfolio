@@ -25,7 +25,8 @@
     <style>
         .floating-3d-container {
             position: fixed !important;
-            left: 30px !important;
+            right: 30px !important;
+            left: auto !important;
             top: 50% !important;
             transform: translateY(-50%) !important;
             z-index: 998 !important;
@@ -283,9 +284,15 @@
                 </div>
 
                 <!-- Local Time Card -->
-                <div class="bento-item bento-clock glass-card">
-                    <div class="clock-time" id="local-clock">00:00:00</div>
-                    <div class="clock-label">My Local Time (IST)</div>
+                <div class="bento-item bento-clock glass-card" style="overflow: hidden;">
+                    <div class="clock-radar-bg">
+                        <div class="radar-ping"></div>
+                        <div class="radar-wave wave-1"></div>
+                        <div class="radar-wave wave-2"></div>
+                        <div class="radar-wave wave-3"></div>
+                    </div>
+                    <div class="clock-time" id="local-clock" style="position: relative; z-index: 5;">00:00:00</div>
+                    <div class="clock-label" style="position: relative; z-index: 5;">Bengaluru Live (IST)</div>
                 </div>
 
                 <!-- Stats Card -->
@@ -328,6 +335,11 @@
                 <!-- Project Card 1: ShareBite -->
                 <div class="project-card glass-card" data-category="frontend" data-project-id="1">
                     <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);">
+                        <div class="project-browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
                         <div class="project-overlay-glow"></div>
                     </div>
                     <div class="project-card-info">
@@ -354,6 +366,11 @@
                 <!-- Project Card 2: Attendance Tracker -->
                 <div class="project-card glass-card" data-category="fullstack" data-project-id="2">
                     <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">
+                        <div class="project-browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
                         <div class="project-overlay-glow"></div>
                     </div>
                     <div class="project-card-info">
@@ -380,6 +397,11 @@
                 <!-- Project Card 3: HostelGo -->
                 <div class="project-card glass-card" data-category="fullstack" data-project-id="3">
                     <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);">
+                        <div class="project-browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
                         <div class="project-overlay-glow"></div>
                     </div>
                     <div class="project-card-info">
@@ -406,6 +428,11 @@
                 <!-- Project Card 4: Slow Learners -->
                 <div class="project-card glass-card" data-category="frontend" data-project-id="4">
                     <div class="project-thumbnail" style="background-image: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);">
+                        <div class="project-browser-header">
+                            <span class="browser-dot red"></span>
+                            <span class="browser-dot yellow"></span>
+                            <span class="browser-dot green"></span>
+                        </div>
                         <div class="project-overlay-glow"></div>
                     </div>
                     <div class="project-card-info">
@@ -571,10 +598,35 @@
 
             <div class="contact-layout reveal-element" style="transition-delay: 0.1s;">
                 <!-- Left: Click to copy card -->
-                <div class="copy-card glass-card">
+                <div class="copy-card glass-card" style="overflow: hidden; position: relative;">
                     <div>
                         <h3 class="copy-widget-title">Quick Connect</h3>
-                        <p style="font-size: 0.85rem; margin-bottom: 24px;">Click the card below to copy my primary email address instantly to your clipboard:</p>
+                        <p style="font-size: 0.85rem; margin-bottom: 16px;">Click the card below to copy my primary email address instantly to your clipboard:</p>
+                        
+                        <!-- Socket Network Visualizer SVG -->
+                        <div class="contact-visualizer-container">
+                            <svg class="contact-network-visualizer" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="50" r="4" fill="var(--accent-primary)" class="node node-1"></circle>
+                                <circle cx="80" cy="20" r="4" fill="var(--accent-secondary)" class="node node-2"></circle>
+                                <circle cx="80" cy="80" r="4" fill="var(--accent-secondary)" class="node node-3"></circle>
+                                <circle cx="140" cy="50" r="4" fill="var(--accent-primary)" class="node node-4"></circle>
+                                <circle cx="180" cy="50" r="6" stroke="var(--accent-primary)" stroke-width="2" class="node-target"></circle>
+                                <circle cx="180" cy="50" r="2" fill="var(--accent-primary)"></circle>
+                                
+                                <path d="M20 50 L80 20 L140 50 L180 50" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" class="path-bg"></path>
+                                <path d="M20 50 L80 80 L140 50" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" class="path-bg"></path>
+                                
+                                <path d="M20 50 L80 20 L140 50 L180 50" stroke="url(#node-gradient)" stroke-width="1.5" stroke-dasharray="200" stroke-dashoffset="200" class="path-active active-1"></path>
+                                <path d="M20 50 L80 80 L140 50 L180 50" stroke="url(#node-gradient)" stroke-width="1.5" stroke-dasharray="200" stroke-dashoffset="200" class="path-active active-2"></path>
+                                
+                                <defs>
+                                    <linearGradient id="node-gradient" x1="0" y1="0" x2="1" y2="0">
+                                        <stop offset="0%" stop-color="var(--accent-primary)"></stop>
+                                        <stop offset="100%" stop-color="var(--accent-secondary)"></stop>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
                         
                         <!-- Clipboard interactive container -->
                         <div class="copy-email-container" id="copy-email-widget" data-email="kritikapanwar151@gmail.com">
